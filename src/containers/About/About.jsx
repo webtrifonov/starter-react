@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './About.module.scss';
 
-const About = () => {
+const About = (props) => {
   return (
-    <div className={`page-container ${classes.About}`}>
+    <div className={classes.pageContainer}>
       <h1>About</h1>
     </div>
   );

@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './BaseLayout.scss';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
-class BaseLayout extends Component {
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
+const BaseLayout = (props) => {
+  return (
+    <div className="container">
+      <div className="row">
+        <header>
           <nav className="menu">
             <ul>
               <Link to={'/'}>Home</Link>
               <Link to={'/about'}>About</Link>
             </ul>
           </nav>
-          <main>{this.props.children}</main>
-        </div>
+        </header>
+        <main>{props.children}</main>
       </div>
-    );
-  }
+    </div>
+  );
 }
-export default connect()(BaseLayout);
+export default BaseLayout;

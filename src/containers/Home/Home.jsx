@@ -9,13 +9,12 @@ const Home = (props) => {
     dispatch(fetchEntityStart(2));
   },  []);
   const entity = useSelector(state => state.entityReducer.entity);
-  console.log('entity = ', entity);
 
   return (
-    <div className={`page-container ${classes.Home}`}>
+    <div className={classes.pageContainer}>
       {
         entity &&
-        <div>
+        <div className={classes.Home}>
           <h3>{entity.title}</h3>
           <p>{entity.body}</p>
         </div>

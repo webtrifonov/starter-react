@@ -6,8 +6,6 @@ import {
 import { FETCH } from '../actions/actionTypes';
 
 function* fetchEntity({id}) {
-  console.log('id = ', id);
-  
   try {
     const response = yield call(axios, {
       method: 'GET',
@@ -21,7 +19,7 @@ function* fetchEntity({id}) {
     });
     const entity = response.data;
     console.log('entity = ', entity);
-    
+
     yield put(fetchEntitySuccess(entity));
   } catch (error) {
     yield put(fetchEntityFailure(error));
