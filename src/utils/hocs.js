@@ -1,6 +1,6 @@
 import React from 'react';
 
-const withLayout = (Layout, Component) => {
+const withLayout = (Layout, Component, options = {}) => {
   return () => (
     <Layout>
       <Component />

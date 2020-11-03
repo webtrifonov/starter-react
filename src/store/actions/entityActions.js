@@ -1,20 +1,20 @@
 import {FETCH} from './actionTypes';
 
-export function fetchEntityStart(id) {
+export function fetchEntityStart(payload) {
   return {
     type: FETCH.ENTITY.START,
-    id,
+    payload,
   }
 }
-export function fetchEntitySuccess(entity) {
+export function fetchEntitySuccess(payload) {
   return {
     type: FETCH.ENTITY.SUCCESS,
-    entity,
+    payload,
   }
 }
 export function fetchEntityFailure(error) {
   return {
-    type: FETCH.ENTITY.FAILURE,
+    type: FETCH.ENTITY.ERROR,
     error,
   }
 }

@@ -1,0 +1,31 @@
+$defaultFont: Helvetica, sans-serif;
+
+body {
+  margin: 0;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: $defaultFont;
+  box-sizing: border-box;
+}
+button, input {
+  font-family: $defaultFont;
+  font-size: 16px;
+}
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.overflow-hidden  {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+.row {
+  width: 100%;
+}

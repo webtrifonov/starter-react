@@ -1,26 +1,32 @@
 import { FETCH } from '../actions/actionTypes';
+import {reducerGenerator} from '../../utils/store';
 
 const initialState = {
-  entity: null,
+  entity: {},
 };
 
-export default function entityReducer(state = initialState, action) {
-  switch (action.type) {
-    case FETCH.ENTITY.START:
-      return {
-        ...state, loading: true
-      };
-    case FETCH.ENTITY.SUCCESS:
-      return {
-        ...state,
-        entity: action.entity,
-        loading: false,
-      };
-    case FETCH.ENTITY.ERROR:
-      return {
-        ...state, loading: false, error: action.error
-      };
-    default:
-      return state;
-  }
+const HANDLERS = {
+  [FETCH.ENTITY.START]: (state) => {
+    return {
+      ...state,
+      loading: true
+    }
+  },
+  [FETCH.ENTITY.SUCCESS]: (state, payload) => {
+    return {
+      ...state,
+      loading: false,
+      entity: payload.entity
+    }
+  },
+  [FETCH.ENTITY.ERROR]: (state, payload) => {
+    return {
+      ...state,
+      loading: false,
+      error: payload.error
+    };
+  },
+
 }
+
+export default reducerGenerator(initialState, HANDLERS);
